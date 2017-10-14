@@ -1,0 +1,43 @@
+@import 'activeadmin/froala_editor/froala_editor.pkgd.css'
+@import 'activeadmin/froala_editor/froala_style.css'
+
+body.active_admin form .froala_editor
+  i.fa
+    text-shadow: none
+  >.fr-box
+    display: inline-block
+    max-width: calc(80% - 22px)
+    width: auto
+  .fr-action-buttons > button
+    font-weight: normal
+    text-shadow: none
+  .fr-checkbox-line > label
+    display: inline-block
+    float: none
+    width: auto
+  .fr-input-line
+    >input[type="text"]
+      box-shadow: none
+      min-width: auto
+      width: 100%
+    >label
+      font-weight: normal
+      line-height: initial
+    >.fr-link-attr
+      width: 100%
+  .fr-element
+    min-width: 450px
+    // reset internal elements
+    *
+      margin: initial
+      padding: initial
+      text-align: initial
+    p
+      margin-bottom: 1em
+    ol
+      list-style-type: decimal
+    ul
+      list-style-type: disc
+    ul, ol
+      margin: 0 1.5em 1.5em 0
+      padding-left: 1.5em
