@@ -2,19 +2,13 @@
 
 An Active Admin plugin to use [Froala WYSIWYG editor](https://github.com/froala/wysiwyg-editor) (jQuery required, font-awesome required & included)
 
-Features:
-
-- modern UI
-- many options available
-- customizable
-
 ![screenshot](screenshot.jpg)
+
+For Froala license / pricing see Froala website.
 
 ## Install
 
-- Add to your Gemfile:
-`gem 'activeadmin_froala_editor'`
-- Execute bundle
+- Update your Gemfile: `gem 'activeadmin_froala_editor'` (and execute *bundle*)
 - Add at the end of your ActiveAdmin styles (_app/assets/stylesheets/active_admin.scss_):
 ```css
 @import 'font-awesome/font-awesome';
@@ -27,7 +21,7 @@ Features:
 ```
 - Use the input with `as: :froala_editor` in Active Admin model conf
 
-Why 2 separated scripts? In this way you can include a different version of *froala editor* if you like.
+Why 2 separated scripts? In this way you can include a different version of *froala editor* if you like. The same for FontAwesome.
 
 ## Options
 
@@ -49,13 +43,15 @@ Why 2 separated scripts? In this way you can include a different version of *fro
 
 Toolbar buttons configuration:
 
-`f.input :description, as: :froala_editor, input_html: {data: {options: {toolbarButtons: ['undo', 'redo', '|', 'bold', 'italic']}}}`
+```ruby
+f.input :description, as: :froala_editor, input_html: {data: {options: {toolbarButtons: ['undo', 'redo', '|', 'bold', 'italic']}}}
+```
 
 ## Notes
 
-- Actually *Code View* function doesn't work properly with this plugin
+- *Code View* function doesn't work properly with this plugin
 
-- Upload functions (Images, Documents, Files, etc.) are not implemented yet
+- For upload functions (Images, Documents, Files, etc.) see Froala docs
 
 ## Do you like it? Star it!
 
@@ -69,4 +65,6 @@ Take a look at [other ActiveAdmin components](https://github.com/blocknotes?utf8
 
 ## License
 
-[MIT](LICENSE.txt)
+Froala License: see Froala website
+
+Plugin License: [MIT](LICENSE.txt)
