@@ -1,7 +1,18 @@
-$(document).ready( function() {
+function initFroalaEditors() {
   $('.froala-editor').each(function () {
-    var options = {};
-    options = $.extend({}, options, $(this).data( 'options' ));
-    $(this).froalaEditor( options );
+    if (!$(this).hasClass('froala-editor--active')) {
+      var options = {};
+      options = $.extend({}, options, $(this).data('options'));
+      $(this).froalaEditor(options);
+      $(this).addClass('froala-editor--active');
+    }
   });
+}
+
+$(document).on('has_many_add:after', function () {
+  initFroalaEditors();
+});
+
+$(document).ready( function() {
+  initFroalaEditors();
 });
