@@ -1,0 +1,12 @@
+@import 'activeadmin/froala_editor/froala_editor.pkgd';
+@import 'activeadmin/froala_editor/froala_style';
+
+body.active_admin form .froala_editor {
+  >.fr-box {
+    display: inline-block;
+    width: calc(80% - 22px);
+  }
+  button {
+    box-shadow: none;
+  }
+}
