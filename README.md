@@ -44,14 +44,14 @@ Why 2 separated scripts? In this way you can include a different version of *fro
 Toolbar buttons configuration:
 
 ```ruby
-f.input :description, as: :froala_editor, input_html: {data: {options: {toolbarButtons: ['undo', 'redo', '|', 'bold', 'italic']}}}
+f.input :description, as: :froala_editor, input_html: { data: { options: { toolbarButtons: ['undo', 'redo', '|', 'bold', 'italic'] } } }
 ```
 
 ## Notes
 
 - *Code View* function doesn't work properly with this plugin
-
 - For upload functions (Images, Documents, Files, etc.) see Froala docs
+- To use this plugins with ActiveAdmin 1.x please use the version 0.1.3
 
 ## Do you like it? Star it!
 
@@ -61,7 +61,7 @@ Take a look at [other ActiveAdmin components](https://github.com/blocknotes?utf8
 
 ## Contributors
 
-- [Mattia Roccoberton](http://blocknot.es) - creator, maintainer
+- [Mattia Roccoberton](http://blocknot.es): author
 
 ## License
 
