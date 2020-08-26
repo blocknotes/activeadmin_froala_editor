@@ -1,4 +1,4 @@
-# ActiveAdmin Froala Editor [![Gem Version](https://badge.fury.io/rb/activeadmin_froala_editor.svg)](https://badge.fury.io/rb/activeadmin_froala_editor)
+# ActiveAdmin Froala Editor [![Gem Version](https://badge.fury.io/rb/activeadmin_froala_editor.svg)](https://badge.fury.io/rb/activeadmin_froala_editor) [![CircleCI](https://circleci.com/gh/blocknotes/activeadmin_froala_editor.svg?style=svg)](https://circleci.com/gh/blocknotes/activeadmin_froala_editor)
 
 An Active Admin plugin to use [Froala WYSIWYG editor](https://github.com/froala/wysiwyg-editor) (jQuery required, font-awesome required & included)
 
