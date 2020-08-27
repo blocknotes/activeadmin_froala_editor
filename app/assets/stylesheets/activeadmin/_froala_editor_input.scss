@@ -2,11 +2,56 @@
 @import 'activeadmin/froala_editor/froala_style';
 
 body.active_admin form .froala_editor {
-  >.fr-box {
+  button {
+    box-shadow: none;
+  }
+  ol {
+    list-style-type: decimal;
+  }
+  ul {
+    list-style-type: disc;
+  }
+  .fr-action-buttons > button {
+    font-weight: normal;
+    text-shadow: none;
+  }
+  .fr-box {
     display: inline-block;
     width: calc(80% - 22px);
   }
-  button {
-    box-shadow: none;
+  .fr-checkbox-line {
+    >label {
+      display: inline-block;
+      float: none;
+      width: auto;
+    }
+    >span {
+      height: auto;
+      padding: 0;
+      width: auto;
+    }
+  }
+  .fr-element {
+    ul, ol {
+      margin: 0 10px 15px 0;
+      padding-left: 25px;
+    }
+    li {
+      padding: 0;
+    }
+  }
+  .fr-input-line >label {
+    font-weight: normal;
+  }
+  .fr-top {
+    border-radius: 4px 4px 0 0;
+  }
+  .fr-wrapper {
+    min-height: 150px;
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .second-toolbar {
+    border-radius: 0 0 4px 4px;
   }
 }
