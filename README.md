@@ -2,7 +2,7 @@
 
 An Active Admin plugin to use [Froala WYSIWYG editor](https://github.com/froala/wysiwyg-editor) (jQuery required, font-awesome required & included)
 
-![screenshot](screenshot.jpg)
+![screenshot](screenshot.png)
 
 For Froala license / pricing see Froala website.
 
