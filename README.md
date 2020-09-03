@@ -10,13 +10,13 @@ Features:
 ![screenshot](screenshot.png)
 
 ## Install
-- Update your Gemfile: `gem 'activeadmin_froala_editor'` (and execute *bundle*)
-- Add at the end of your ActiveAdmin styles (_app/assets/stylesheets/active_admin.scss_):
+- After installing Active Admin, add to your Gemfile: `gem 'activeadmin_froala_editor'` (and execute *bundle*)
+- Add at the end of your Active Admin styles (_app/assets/stylesheets/active_admin.scss_):
 ```css
 @import 'font-awesome/font-awesome';
 @import 'activeadmin/froala_editor_input';
 ```
-- Add at the end of your ActiveAdmin javascripts (_app/assets/javascripts/active_admin.js_):
+- Add at the end of your Active Admin javascripts (_app/assets/javascripts/active_admin.js_):
 ```js
 //= require activeadmin/froala_editor/froala_editor.pkgd.min
 //= require activeadmin/froala_editor_input
@@ -29,7 +29,7 @@ Features:
 ## Examples
 
 ```ruby
-# ActiveAdmin article form conf:
+# Active Admin article form conf:
   form do |f|
     f.inputs 'Article' do
       f.input :title
@@ -53,12 +53,12 @@ the *upload_admin_post_path*) and it doesn't provide a way to remove images (jus
 the editor will not destroy them, you'll need to implement a purge logic for that).
 
 ## Notes
-- To use this plugins with ActiveAdmin 1.x please use the version [0.1.3](https://github.com/blocknotes/activeadmin_froala_editor/releases/tag/v0.1.3)
+- To use this plugins with Active Admin 1.x please use the version [0.1.3](https://github.com/blocknotes/activeadmin_froala_editor/releases/tag/v0.1.3)
 
 ## Do you like it? Star it!
 If you use this component just star it. A developer is more motivated to improve a project when there is some interest.
 
-Take a look at [other ActiveAdmin components](https://github.com/blocknotes?utf8=✓&tab=repositories&q=activeadmin&type=source) that I made if you are curious.
+Take a look at [other Active Admin components](https://github.com/blocknotes?utf8=✓&tab=repositories&q=activeadmin&type=source) that I made if you are curious.
 
 ## Contributors
 - [Mattia Roccoberton](http://blocknot.es): author
