@@ -28,6 +28,8 @@ Features:
 
 ## Examples
 
+### Basic usage
+
 ```ruby
 # Active Admin article form conf:
   form do |f|
@@ -40,13 +42,30 @@ Features:
   end
 ```
 
-Toolbar buttons configuration:
+### Toolbar buttons configuration
 
 ```ruby
+# Form field
 f.input :description, as: :froala_editor, input_html: { data: { options: { toolbarButtons: ['undo', 'redo', '|', 'bold', 'italic'] } } }
 ```
 
-Froala upload plugin: for the relevant files of an upload example see [here](examples/upload_plugin_using_activestorage/).
+### Froala upload plugin
+
+```ruby
+# Upload method (to be included in the admin entity configuration)
+member_action :upload, method: [:post] do
+  success = resource.images.attach(params[:file_upload])
+  result = success ? { link: url_for(resource.images.last) } : {}
+  render json: result
+end
+```
+
+```ruby
+# Form field
+f.input :description, as: :froala_editor, input_html: { data: { options: { imageUploadParam: 'file_upload', imageUploadURL: upload_admin_post_path(resource.id), toolbarButtons: %w[bold italic underline | insertImage insertVideo insertFile] } } }
+```
+
+For the relevant files of an upload example see [here](examples/upload_plugin_using_activestorage/).
 Consider that this is just a basic example: images are uploaded as soon as they are attached to the
  editor (regardless of the form submit), it shows the editor only for an existing record (because of
 the *upload_admin_post_path*) and it doesn't provide a way to remove images (just deleting them from
