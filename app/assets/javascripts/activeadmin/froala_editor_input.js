@@ -4,6 +4,10 @@ function initFroalaEditors() {
       var name = $(this).attr('name');
       if(name) {
         var options = {
+          quickInsertButtons: ['table', 'ol', 'ul', 'hr'],
+          requestHeaders: {
+            'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+          },
           toolbarButtons: {
             moreText: {
               buttons: ['bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'fontFamily', 'fontSize', 'textColor', 'backgroundColor', 'inlineClass', 'inlineStyle', 'clearFormatting'],
@@ -25,8 +29,7 @@ function initFroalaEditors() {
               align: 'right',
               buttonsVisible: 3
             }
-          },
-          quickInsertButtons: ['table', 'ol', 'ul', 'hr']
+          }
         };
         options = $.extend({}, options, $(this).data('options'));
         new FroalaEditor('.froala-editor[name="' + name + '"]', options);
