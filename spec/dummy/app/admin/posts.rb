@@ -38,10 +38,11 @@ ActiveAdmin.register Post do # rubocop:disable Metrics/BlockLength
   end
 
   form do |f|
+    buttons = %w[undo redo bold italic]
     f.inputs 'Post' do
       f.input :author
       f.input :title
-      f.input :description, as: :froala_editor
+      f.input :description, as: :froala_editor, input_html: { data: { options: { toolbarButtons: buttons } } }
       f.input :category
       f.input :dt
       f.input :position

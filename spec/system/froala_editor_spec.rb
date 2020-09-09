@@ -17,6 +17,10 @@ RSpec.describe 'Froala editor', type: :system do
     it 'updates some HTML content' do
       visit "/admin/posts/#{post.id}/edit"
 
+      %w[undo redo bold italic].each do |button|
+        expect(page).to have_css(".fr-box [data-cmd=\"#{button}\"]")
+      end
+      expect(page).to have_css('#post_description[data-aa-froala-editor]', visible: :hidden)
       expect(page).to have_css('#post_description_input .fr-element', text: 'Some content...')
       find('#post_description_input .fr-element').base.send_keys('more text')
 
