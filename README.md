@@ -23,8 +23,9 @@ Features:
 ```
 - Use the input with `as: :froala_editor` in Active Admin model conf
 
-## Options
-**data-options**: permits to set *froala editor* options directly - see [options list](https://www.froala.com/wysiwyg-editor/docs/options)
+## Notes
+- To use this plugins with Active Admin 1.x please use the version [0.1.3](https://github.com/blocknotes/activeadmin_froala_editor/releases/tag/v0.1.3)
+- **data-options**: permits to set *froala editor* options directly from the form field (examples below) - see [options list](https://www.froala.com/wysiwyg-editor/docs/options)
 
 ## Examples
 
@@ -71,9 +72,6 @@ Consider that this is just a basic example: images are uploaded as soon as they 
 the *upload_admin_post_path*) and it doesn't provide a way to remove images (just deleting them from
 the editor will not destroy them, you'll need to implement a purge logic for that).
 
-## Notes
-- To use this plugins with Active Admin 1.x please use the version [0.1.3](https://github.com/blocknotes/activeadmin_froala_editor/releases/tag/v0.1.3)
-
 ## Do you like it? Star it!
 If you use this component just star it. A developer is more motivated to improve a project when there is some interest.
 
@@ -84,5 +82,6 @@ Take a look at [other Active Admin components](https://github.com/blocknotes?utf
 - The good guys that opened issues and pull requests from time to time
 
 ## License
-- The gem is available as open-source under the terms of the [MIT](LICENSE.txt)
-- For Froala editor License: see [Froala website](https://froala.com/wysiwyg-editor/)
+The gem is available as open-source under the terms of the [MIT](LICENSE.txt).
+
+For Froala editor License: see [Froala website](https://froala.com/wysiwyg-editor/).
