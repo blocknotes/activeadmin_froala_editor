@@ -1,6 +1,4 @@
-(function () {
-  'use strict'
-
+let initializer = function () {
   // --- functions -------------------------------------------------------------
   function initFroalaEditors() {
     $('[data-aa-froala-editor]').each(function () {
@@ -50,5 +48,8 @@
 
   $(document).on('has_many_add:after', '.has_many_container', () => {
     initFroalaEditors()
-  })
-})()
+  });
+});
+
+$(initializer);
+$(document).on('turbolinks:load', initializer);
