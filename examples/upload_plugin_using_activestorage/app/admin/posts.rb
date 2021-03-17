@@ -48,7 +48,12 @@ ActiveAdmin.register Post do
       f.input :author
       f.input :title
       unless resource.new_record?
-        f.input :description, as: :froala_editor, input_html: { data: { options: { imageUploadParam: 'file_upload', imageUploadURL: upload_admin_post_path(resource.id), toolbarButtons: %w[bold italic underline | insertImage insertVideo insertFile] } } }
+        options = {
+          imageUploadParam: 'file_upload',
+          imageUploadURL: upload_admin_post_path(resource.id),
+          toolbarButtons: %w[bold italic underline | insertImage insertVideo insertFile]
+        }
+        f.input :description, as: :froala_editor, input_html: { data: { options: options } }
       end
       f.input :category
       f.input :dt
