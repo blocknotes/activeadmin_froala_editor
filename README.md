@@ -73,9 +73,9 @@ the *upload_admin_post_path*) and it doesn't provide a way to remove images (jus
 the editor will not destroy them, you'll need to implement a purge logic for that).
 
 ## Do you like it? Star it!
-If you use this component just star it. A developer is more motivated to improve a project when there is some interest.
+If you use this component just star it. A developer is more motivated to improve a project when there is some interest. My other [Active Admin components](https://github.com/blocknotes?utf8=✓&tab=repositories&q=activeadmin&type=source).
 
-Take a look at [other Active Admin components](https://github.com/blocknotes?utf8=✓&tab=repositories&q=activeadmin&type=source) that I made if you are curious.
+Or consider offering me a coffee, it's a small thing but it is greatly appreciated: [about me](https://www.blocknot.es/about-me).
 
 ## Contributors
 - [Mattia Roccoberton](http://blocknot.es): author
