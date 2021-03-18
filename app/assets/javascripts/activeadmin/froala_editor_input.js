@@ -44,11 +44,7 @@
   }
 
   // --- events ----------------------------------------------------------------
-  $(document).ready(() => {
-    initFroalaEditors()
-  })
-
-  $(document).on('has_many_add:after', '.has_many_container', () => {
-    initFroalaEditors()
-  })
+  $(document).ready(initFroalaEditors)
+  $(document).on('has_many_add:after', '.has_many_container', initFroalaEditors)
+  $(document).on('turbolinks:load', initFroalaEditors)
 })()
