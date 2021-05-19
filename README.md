@@ -1,4 +1,4 @@
-# ActiveAdmin Froala Editor [![Gem Version](https://badge.fury.io/rb/activeadmin_froala_editor.svg)](https://badge.fury.io/rb/activeadmin_froala_editor) [![CircleCI](https://circleci.com/gh/blocknotes/activeadmin_froala_editor.svg?style=svg)](https://circleci.com/gh/blocknotes/activeadmin_froala_editor)
+# ActiveAdmin Froala Editor [![Gem Version](https://badge.fury.io/rb/activeadmin_froala_editor.svg)](https://badge.fury.io/rb/activeadmin_froala_editor) [![Specs](https://github.com/blocknotes/activeadmin_froala_editor/actions/workflows/specs.yml/badge.svg)](https://github.com/blocknotes/activeadmin_froala_editor/actions/workflows/specs.yml)
 
 An Active Admin plugin to use [Froala WYSIWYG editor](https://github.com/froala/wysiwyg-editor) (jQuery required, font-awesome required & included). For Froala license / pricing see Froala website.
 
@@ -10,6 +10,7 @@ Features:
 ![screenshot](screenshot.png)
 
 ## Install
+
 - After installing Active Admin, add to your Gemfile: `gem 'activeadmin_froala_editor'` (and execute *bundle*)
 - Add at the end of your Active Admin styles (_app/assets/stylesheets/active_admin.scss_):
 ```css
@@ -24,6 +25,7 @@ Features:
 - Use the input with `as: :froala_editor` in Active Admin model conf
 
 ## Notes
+
 - To use this plugins with Active Admin 1.x please use the version [0.1.3](https://github.com/blocknotes/activeadmin_froala_editor/releases/tag/v0.1.3)
 - **data-options**: permits to set *froala editor* options directly from the form field (examples below) - see [options list](https://www.froala.com/wysiwyg-editor/docs/options)
 
@@ -73,15 +75,18 @@ the *upload_admin_post_path*) and it doesn't provide a way to remove images (jus
 the editor will not destroy them, you'll need to implement a purge logic for that).
 
 ## Do you like it? Star it!
+
 If you use this component just star it. A developer is more motivated to improve a project when there is some interest. My other [Active Admin components](https://github.com/blocknotes?utf8=✓&tab=repositories&q=activeadmin&type=source).
 
 Or consider offering me a coffee, it's a small thing but it is greatly appreciated: [about me](https://www.blocknot.es/about-me).
 
 ## Contributors
+
 - [Mattia Roccoberton](http://blocknot.es): author
 - The good guys that opened issues and pull requests from time to time
 
 ## License
+
 The gem is available as open-source under the terms of the [MIT](LICENSE.txt).
 
 For Froala editor License: see [Froala website](https://froala.com/wysiwyg-editor/).
