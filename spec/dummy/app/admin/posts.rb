@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-ActiveAdmin.register Post do # rubocop:disable Metrics/BlockLength
-  permit_params :author_id, :title, :description, :category, :dt, :position, :published, tag_ids: []
+ActiveAdmin.register Post do
+  permit_params :author_id, :title, :summary, :description, :category, :dt, :position, :published, tag_ids: []
 
   index do
     selectable_column
@@ -17,6 +17,7 @@ ActiveAdmin.register Post do # rubocop:disable Metrics/BlockLength
     attributes_table do
       row :author
       row :title
+      row :summary
       row :description
       row :category
       row :dt
@@ -42,6 +43,7 @@ ActiveAdmin.register Post do # rubocop:disable Metrics/BlockLength
     f.inputs 'Post' do
       f.input :author
       f.input :title
+      f.input :summary, as: :froala_editor, input_html: { data: { options: { toolbarButtons: buttons } } }
       f.input :description, as: :froala_editor, input_html: { data: { options: { toolbarButtons: buttons } } }
       f.input :category
       f.input :dt

@@ -11,6 +11,7 @@ group :development, :test do
   gem 'rspec_junit_formatter', '~> 0.4'
   gem 'rspec-rails', '~> 4.0'
   gem 'rubocop', '~> 1.0'
+  gem 'rubocop-rspec', '~> 2.3'
   gem 'selenium-webdriver', '~> 3.142'
   gem 'sprockets-rails', '~> 3.2'
   gem 'sqlite3', '~> 1.4'

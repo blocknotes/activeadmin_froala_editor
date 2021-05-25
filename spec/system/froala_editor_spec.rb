@@ -2,19 +2,11 @@
 
 RSpec.describe 'Froala editor', type: :system do
   let(:author) { Author.create!(email: 'some_email@example.com', name: 'John Doe', age: 30) }
-  let(:post) { Post.create!(title: 'Test', author: author, description: 'Some content...') }
-
-  before do
-    post
-  end
-
-  after do
-    Post.delete_all
-    author.delete
-  end
+  let!(:post) { Post.create!(title: 'Test', author: author, description: '') }
 
   context 'with a Froala editor' do
     it 'initialize the editor' do
+      post.update(description: 'Some content...')
       visit "/admin/posts/#{post.id}/edit"
 
       %w[undo redo bold italic].each do |button|
@@ -27,35 +19,53 @@ RSpec.describe 'Froala editor', type: :system do
     it 'adds some text to the description' do
       visit "/admin/posts/#{post.id}/edit"
 
-      find('#post_description_input .fr-element').base.send_keys('more text')
+      find('#post_description_input .fr-element').base.send_keys('Some text')
       find('[type="submit"]').click
 
       expect(page).to have_content('was successfully updated')
-      expect(post.reload.description).to eq '<p>Some content...more text</p>'
+      expect(post.reload.description).to eq '<p>Some text</p>'
     end
 
     it 'adds some bold text to the description' do
       visit "/admin/posts/#{post.id}/edit"
 
       find('#post_description_input .fr-element').click
-      find('.fr-toolbar [data-cmd="bold"]').click
-      find('#post_description_input .fr-element').base.send_keys('bold text')
+      find('#post_description_input .fr-toolbar [data-cmd="bold"]').click
+      find('#post_description_input .fr-element').base.send_keys('Some bold text')
       find('[type="submit"]').click
 
       expect(page).to have_content('was successfully updated')
-      expect(post.reload.description).to eq '<p>Some content...<strong>bold text</strong></p>'
+      expect(post.reload.description).to eq '<p><strong>Some bold text</strong></p>'
     end
 
     it 'adds some italic text to the description' do
       visit "/admin/posts/#{post.id}/edit"
 
       find('#post_description_input .fr-element').click
-      find('.fr-toolbar [data-cmd="italic"]').click
-      find('#post_description_input .fr-element').base.send_keys('italic text')
+      find('#post_description_input .fr-toolbar [data-cmd="italic"]').click
+      find('#post_description_input .fr-element').base.send_keys('Some italic text')
       find('[type="submit"]').click
 
       expect(page).to have_content('was successfully updated')
-      expect(post.reload.description).to eq '<p>Some content...<em>italic text</em></p>'
+      expect(post.reload.description).to eq '<p><em>Some italic text</em></p>'
+    end
+  end
+
+  context 'with 2 Froala editors' do
+    it 'updates some HTML content for 2 fields' do
+      visit "/admin/posts/#{post.id}/edit"
+
+      find('#post_description_input .fr-element').click
+      find('#post_description_input .fr-toolbar [data-cmd="bold"]').click
+      find('#post_description_input .fr-element').base.send_keys('Bold text')
+      find('#post_summary_input .fr-element').click
+      find('#post_summary_input .fr-toolbar [data-cmd="italic"]').click
+      find('#post_summary_input .fr-element').base.send_keys('Italic text')
+      find('[type="submit"]').click
+      post.reload
+
+      expect(post.description).to eq '<p><strong>Bold text</strong></p>'
+      expect(post.summary).to eq '<p><em>Italic text</em></p>'
     end
   end
 

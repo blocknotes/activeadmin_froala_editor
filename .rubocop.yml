@@ -1,6 +1,9 @@
 inherit_from:
   - https://relaxed.ruby.style/rubocop.yml
 
+require:
+  - rubocop-rspec
+
 AllCops:
   Exclude:
     - bin/*
@@ -16,6 +19,14 @@ Naming/FileName:
 Layout/LineLength:
   Enabled: true
   Max: 120
+
+RSpec/ExampleLength:
+  # default 5
+  Max: 12
+
+RSpec/MultipleExpectations:
+  # default 1
+  Max: 4
 
 Style/HashEachMethods:
   Enabled: true
