@@ -1,5 +1,5 @@
-@import 'activeadmin/froala_editor/froala_editor.pkgd';
-@import 'activeadmin/froala_editor/froala_style';
+@import './froala_editor/froala_editor.pkgd';
+@import './froala_editor/froala_style';
 
 body.active_admin .froala_editor {
   button {
