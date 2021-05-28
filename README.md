@@ -1,4 +1,4 @@
-# ActiveAdmin Froala Editor [![Gem Version](https://badge.fury.io/rb/activeadmin_froala_editor.svg)](https://badge.fury.io/rb/activeadmin_froala_editor) [![Specs](https://github.com/blocknotes/activeadmin_froala_editor/actions/workflows/specs.yml/badge.svg)](https://github.com/blocknotes/activeadmin_froala_editor/actions/workflows/specs.yml)
+# ActiveAdmin Froala Editor [![Gem Version](https://badge.fury.io/rb/activeadmin_froala_editor.svg)](https://badge.fury.io/rb/activeadmin_froala_editor) [![Gem downloads](https://badgen.net/rubygems/dt/activeadmin_froala_editor)](https://rubygems.org/gems/activeadmin_froala_editor) [![Specs](https://github.com/blocknotes/activeadmin_froala_editor/actions/workflows/specs.yml/badge.svg)](https://github.com/blocknotes/activeadmin_froala_editor/actions/workflows/specs.yml)
 
 An Active Admin plugin to use [Froala WYSIWYG editor](https://github.com/froala/wysiwyg-editor) (jQuery required, font-awesome required & included). For Froala license / pricing see Froala website.
 
@@ -9,9 +9,14 @@ Features:
 
 ![screenshot](screenshot.png)
 
+Please :star: if you like it.
+
 ## Install
 
-- After installing Active Admin, add to your Gemfile: `gem 'activeadmin_froala_editor'` (and execute *bundle*)
+After installing Active Admin, add to your Gemfile: `gem 'activeadmin_froala_editor'` (and execute *bundle*)
+
+If you installed Active Admin **without Webpacker** support:
+
 - Add at the end of your Active Admin styles (_app/assets/stylesheets/active_admin.scss_):
 ```css
 @import 'font-awesome/font-awesome';
@@ -23,6 +28,20 @@ Features:
 //= require activeadmin/froala_editor_input
 ```
 - Use the input with `as: :froala_editor` in Active Admin model conf
+
+Otherwise **with Webpacker**:
+
+- Execute in your project root:
+
+```sh
+yarn add blocknotes/activeadmin_froala_editor
+```
+
+- Add to your *app/javascript/packs/active_admin.js*:
+
+```js
+require('activeadmin_froala_editor')
+```
 
 ## Notes
 
