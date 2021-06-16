@@ -35,7 +35,10 @@
               }
             }
           }
-          options = $.extend({}, options, $(this).data('options'))
+          let input_options = $(this).data('options')
+          if(!input_options && window.froala_options) input_options = window.froala_options[name]
+          options = $.extend({}, options, input_options)
+
           new FroalaEditor('[data-aa-froala-editor][name="' + name + '"]', options)
           $(this).addClass('froala-editor--active')
         }
