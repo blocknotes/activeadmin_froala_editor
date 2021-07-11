@@ -15,9 +15,7 @@ group :development, :test do
   gem 'sqlite3', '~> 1.4'
 
   # Linters
-  gem 'brakeman'
   gem 'fasterer'
-  gem 'reek'
   gem 'rubocop'
   gem 'rubocop-packaging'
   gem 'rubocop-performance'
