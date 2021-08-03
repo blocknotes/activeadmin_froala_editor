@@ -9,5 +9,8 @@
   "files": [
     "app/**/*",
     "index.js"
-  ]
+  ],
+  "devDependencies": {
+    "froala-editor": "^4.0.4"
+  }
 }
