@@ -1,5 +1,5 @@
 /*!
- * froala_editor v3.2.6 (https://www.froala.com/wysiwyg-editor)
+ * froala_editor v4.0.4 (https://www.froala.com/wysiwyg-editor)
  * License https://froala.com/wysiwyg-editor/terms/
  * Copyright 2014-2021 Froala Labs
  */
@@ -19,6 +19,25 @@
     translation: {
       // Place holder
       'Type something': 'Escriba algo',
+      // Missing translations
+      'More Text': 'Más texto',
+      'Text Color': 'Color de texto',
+      'Background Color': 'Color de fondo',
+      'Inline Class': 'Clase en línea',
+      'Default': 'Defecto',
+      'Lower Alpha': 'Alpha inferiores',
+      'Lower Greek': 'Griegas inferiores',
+      'Lower Roman': 'Romanas inferiores',
+      'Upper Alpha': 'Alpha superiores',
+      'Upper Roman': 'Romanas superiores',
+      'Circle': 'Circulo',
+      'Disc': 'Dto',
+      'Square': 'Cuadrado',
+      'Single': 'Soltero',
+      'Double': 'Doble',
+      'More Rich': 'Más Rico',
+      'More Misc': 'Más Diverso',
+      'Download PDF': 'Descargar PDF',
       // Basic formatting
       'Bold': 'Negrita',
       'Italic': "It\xE1lica",
