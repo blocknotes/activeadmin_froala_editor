@@ -5,7 +5,7 @@ RSpec.describe 'Froala editor', type: :system do
   let!(:post) { Post.create!(title: 'Test', author: author, description: '') }
 
   context 'with a Froala editor' do
-    it 'initialize the editor' do
+    it 'initialize the editor', :aggregate_failures do
       post.update(description: 'Some content...')
       visit "/admin/posts/#{post.id}/edit"
 
@@ -14,9 +14,10 @@ RSpec.describe 'Froala editor', type: :system do
       end
       expect(page).to have_css('#post_description[data-aa-froala-editor]', visible: :hidden)
       expect(page).to have_css('#post_description_input .fr-element', text: 'Some content...')
+      expect(page.evaluate_script('FroalaEditor.VERSION')).to eq(ActiveAdmin::FroalaEditor::FROALA_VERSION)
     end
 
-    it 'adds some text to the description' do
+    it 'adds some text to the description', :aggregate_failures do
       visit "/admin/posts/#{post.id}/edit"
 
       find('#post_description_input .fr-element').base.send_keys('Some text')
@@ -26,7 +27,7 @@ RSpec.describe 'Froala editor', type: :system do
       expect(post.reload.description).to eq '<p>Some text</p>'
     end
 
-    it 'adds some bold text to the description' do
+    it 'adds some bold text to the description', :aggregate_failures do
       visit "/admin/posts/#{post.id}/edit"
 
       find('#post_description_input .fr-element').click
@@ -38,7 +39,7 @@ RSpec.describe 'Froala editor', type: :system do
       expect(post.reload.description).to eq '<p><strong>Some bold text</strong></p>'
     end
 
-    it 'adds some italic text to the description' do
+    it 'adds some italic text to the description', :aggregate_failures do
       visit "/admin/posts/#{post.id}/edit"
 
       find('#post_description_input .fr-element').click
@@ -52,7 +53,7 @@ RSpec.describe 'Froala editor', type: :system do
   end
 
   context 'with 2 Froala editors' do
-    it 'updates some HTML content for 2 fields' do
+    it 'updates some HTML content for 2 fields', :aggregate_failures do
       visit "/admin/posts/#{post.id}/edit"
 
       find('#post_description_input .fr-element').click
@@ -70,7 +71,7 @@ RSpec.describe 'Froala editor', type: :system do
   end
 
   context 'with a Froala editor in a nested resource' do
-    it 'updates some HTML content of a new nested resource' do
+    it 'updates some HTML content of a new nested resource', :aggregate_failures do
       visit "/admin/authors/#{author.id}/edit"
 
       find('.posts.has_many_container .has_many_add').click

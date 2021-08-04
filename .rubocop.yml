@@ -27,10 +27,6 @@ RSpec/ExampleLength:
   # default 5
   Max: 12
 
-RSpec/MultipleExpectations:
-  # default 1
-  Max: 4
-
 Style/HashEachMethods:
   Enabled: true
 

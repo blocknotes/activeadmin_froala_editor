@@ -3,5 +3,6 @@
 module ActiveAdmin
   module FroalaEditor
     VERSION = '0.3.0'
+    FROALA_VERSION = '4.0.4'
   end
 end
