@@ -1,7 +1,7 @@
 /*!
- * froala_editor v4.0.4 (https://www.froala.com/wysiwyg-editor)
+ * froala_editor v4.0.10 (https://www.froala.com/wysiwyg-editor)
  * License https://froala.com/wysiwyg-editor/terms/
- * Copyright 2014-2021 Froala Labs
+ * Copyright 2014-2022 Froala Labs
  */
 
 .fr-clearfix::after {
@@ -22,6 +22,9 @@
 
 .fr-element, .fr-element:focus {
   outline: 0 solid transparent; }
+
+.fr-view.fr-element-scroll-visible {
+  overflow-x: visible !important; }
 
 .fr-box.fr-basic {
   border-radius: 10px;
@@ -805,10 +808,7 @@ ol.decimal_type > li:before {
   .fr-popup.fr-active {
     display: block; }
   .fr-popup.fr-hidden {
-    -webkit-opacity: 0;
-    -moz-opacity: 0;
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; }
+    display: none !important; }
   .fr-popup.fr-empty {
     display: none !important; }
   .fr-popup .fr-hs {
@@ -818,7 +818,7 @@ ol.decimal_type > li:before {
   .fr-popup .fr-input-line {
     position: relative;
     padding: 15px 0; }
-    .fr-popup .fr-input-line input[type="text"], .fr-popup .fr-input-line textarea {
+    .fr-popup .fr-input-line input[type="text"], .fr-popup .fr-input-line input[type="number"], .fr-popup .fr-input-line textarea {
       width: 100%;
       margin-bottom: 1px;
       border-radius: 2px;
@@ -841,12 +841,12 @@ ol.decimal_type > li:before {
       -moz-transition: border 0.5s, padding 0.5s;
       -ms-transition: border 0.5s, padding 0.5s;
       -o-transition: border 0.5s, padding 0.5s; }
-      .fr-popup .fr-input-line input[type="text"]:hover, .fr-popup .fr-input-line textarea:hover {
+      .fr-popup .fr-input-line input[type="text"]:hover, .fr-popup .fr-input-line input[type="number"]:hover, .fr-popup .fr-input-line textarea:hover {
         border: solid 1px #515151; }
-      .fr-popup .fr-input-line input[type="text"]:focus, .fr-popup .fr-input-line textarea:focus {
+      .fr-popup .fr-input-line input[type="text"]:focus, .fr-popup .fr-input-line input[type="number"]:focus, .fr-popup .fr-input-line textarea:focus {
         border: solid 2px #0098f7;
         padding: 3px 11px; }
-    .fr-popup .fr-input-line input[type="text"] {
+    .fr-popup .fr-input-line input[type="text"], .fr-popup .fr-input-line input[type="number"] {
       height: 46px; }
     .fr-popup .fr-input-line input + label, .fr-popup .fr-input-line textarea + label {
       position: absolute;
@@ -1180,6 +1180,10 @@ ol.decimal_type > li:before {
       border-top: 0; }
     .fr-toolbar.fr-inline .fr-newline {
       height: 0; }
+    .fr-toolbar.fr-inline .fr-more-toolbar {
+      position: absolute !important; }
+      .fr-toolbar.fr-inline .fr-more-toolbar.fr-expanded {
+        position: relative !important; }
   .fr-toolbar.fr-top {
     top: 0;
     border-bottom: 0;
@@ -3108,6 +3112,8 @@ body.fr-fullscreen {
   right: 0;
   z-index: 2147483630 !important;
   width: auto !important; }
+  .fr-box.fr-fullscreen .fr-wrapper {
+    background-color: #FFF; }
   .fr-box.fr-fullscreen.fr-basic.fr-top .fr-wrapper {
     border-radius: 0;
     -moz-border-radius: 0;
@@ -3394,6 +3400,9 @@ body.fr-fullscreen {
     left: -25%; }
   to {
     left: 100%; } }
+img.fr-draggable {
+  user-select: none; }
+
 .fr-clearfix::after {
   clear: both;
   display: block;
@@ -3675,19 +3684,16 @@ div.fr-modal-body {
   border: 0; }
 
 .fr-wrapper-markdown {
-  display: flex;
-  min-height: 200px; }
+  display: flex; }
 
 .fr-markdown-view {
   width: calc(52% - 1px);
-  box-sizing: inherit;
-  min-height: 200px !important; }
+  box-sizing: inherit; }
 
 .fr-markdown-editor {
   width: calc(48% - 1px);
   box-sizing: inherit;
-  background-color: #eee;
-  min-height: 200px !important; }
+  background-color: #eee; }
 
 .fr-markdown-editor > p {
   margin: 0; }
@@ -4492,6 +4498,8 @@ div.fr-modal-body {
     color: inherit; }
   .fr-view strong {
     font-weight: 700; }
+  .fr-view table[border='0'] td:not([class]), .fr-view table[border='0'] th:not([class]), .fr-view table[border='0'] td[class=""], .fr-view table[border='0'] th[class=""] {
+    border-width: 0px; }
   .fr-view table {
     border: none;
     border-collapse: collapse;
