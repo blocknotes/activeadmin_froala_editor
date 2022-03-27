@@ -21,6 +21,7 @@ After installing Active Admin, add to your Gemfile: `gem 'activeadmin_froala_edi
 
 If you installed Active Admin **without Webpacker** support:
 
+- Add a SASS/SCSS gem to your Gemfile (ex. `gem 'sassc'`)
 - Add at the end of your Active Admin styles (_app/assets/stylesheets/active_admin.scss_):
 ```css
 @import 'font-awesome/font-awesome';
