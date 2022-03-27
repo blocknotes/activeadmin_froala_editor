@@ -1,5 +1,8 @@
 # ActiveAdmin Froala Editor
-[![gem version](https://badge.fury.io/rb/activeadmin_froala_editor.svg)](https://badge.fury.io/rb/activeadmin_froala_editor) [![gem downloads](https://badgen.net/rubygems/dt/activeadmin_froala_editor)](https://rubygems.org/gems/activeadmin_froala_editor) [![linters](https://github.com/blocknotes/activeadmin_froala_editor/actions/workflows/linters.yml/badge.svg)](https://github.com/blocknotes/activeadmin_froala_editor/actions/workflows/linters.yml) [![specs](https://github.com/blocknotes/activeadmin_froala_editor/actions/workflows/specs.yml/badge.svg)](https://github.com/blocknotes/activeadmin_froala_editor/actions/workflows/specs.yml)
+[![gem version](https://badge.fury.io/rb/activeadmin_froala_editor.svg)](https://badge.fury.io/rb/activeadmin_froala_editor)
+[![gem downloads](https://badgen.net/rubygems/dt/activeadmin_froala_editor)](https://rubygems.org/gems/activeadmin_froala_editor)
+[![linters](https://github.com/blocknotes/activeadmin_froala_editor/actions/workflows/linters.yml/badge.svg)](https://github.com/blocknotes/activeadmin_froala_editor/actions/workflows/linters.yml)
+[![specs](https://github.com/blocknotes/activeadmin_froala_editor/actions/workflows/specs.yml/badge.svg)](https://github.com/blocknotes/activeadmin_froala_editor/actions/workflows/specs.yml)
 
 An Active Admin plugin to use [Froala WYSIWYG editor](https://github.com/froala/wysiwyg-editor) (jQuery required, font-awesome required & included). For Froala license / pricing see Froala website.
 
@@ -8,7 +11,7 @@ Features:
 - customizable options via data attributes in the form input;
 - plugins included, like images upload.
 
-![screenshot](screenshot.png)
+![screenshot](extra/screenshot.png)
 
 Please :star: if you like it.
 
