@@ -3,17 +3,19 @@ name: Specs
 
 on:
   push:
-    branches: [master]
+    branches:
+      - master
   pull_request:
-    branches: [master]
+    branches:
+      - master
 
 jobs:
-  test:
+  tests:
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        ruby: ['2.5', '2.6', '2.7']
+        ruby: ['2.6', '2.7']
 
     steps:
       - name: Checkout
