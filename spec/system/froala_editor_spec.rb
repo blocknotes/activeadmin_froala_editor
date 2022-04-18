@@ -5,7 +5,7 @@ RSpec.describe 'Froala editor', type: :system do
   let!(:post) { Post.create!(title: 'Test', author: author, description: '') }
 
   context 'with a Froala editor' do
-    it 'initialize the editor', :aggregate_failures do
+    it 'initializes the editor', :aggregate_failures do
       post.update(description: 'Some content...')
       visit "/admin/posts/#{post.id}/edit"
 
@@ -14,7 +14,6 @@ RSpec.describe 'Froala editor', type: :system do
       end
       expect(page).to have_css('#post_description[data-aa-froala-editor]', visible: :hidden)
       expect(page).to have_css('#post_description_input .fr-element', text: 'Some content...')
-      expect(page.evaluate_script('FroalaEditor.VERSION')).to eq(ActiveAdmin::FroalaEditor::FROALA_VERSION)
     end
 
     it 'adds some text to the description', :aggregate_failures do

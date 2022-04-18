@@ -1,5 +1,8 @@
 # ActiveAdmin Froala Editor
-[![gem version](https://badge.fury.io/rb/activeadmin_froala_editor.svg)](https://badge.fury.io/rb/activeadmin_froala_editor) [![gem downloads](https://badgen.net/rubygems/dt/activeadmin_froala_editor)](https://rubygems.org/gems/activeadmin_froala_editor) [![linters](https://github.com/blocknotes/activeadmin_froala_editor/actions/workflows/linters.yml/badge.svg)](https://github.com/blocknotes/activeadmin_froala_editor/actions/workflows/linters.yml) [![specs](https://github.com/blocknotes/activeadmin_froala_editor/actions/workflows/specs.yml/badge.svg)](https://github.com/blocknotes/activeadmin_froala_editor/actions/workflows/specs.yml)
+[![gem version](https://badge.fury.io/rb/activeadmin_froala_editor.svg)](https://badge.fury.io/rb/activeadmin_froala_editor)
+[![gem downloads](https://badgen.net/rubygems/dt/activeadmin_froala_editor)](https://rubygems.org/gems/activeadmin_froala_editor)
+[![linters](https://github.com/blocknotes/activeadmin_froala_editor/actions/workflows/linters.yml/badge.svg)](https://github.com/blocknotes/activeadmin_froala_editor/actions/workflows/linters.yml)
+[![specs](https://github.com/blocknotes/activeadmin_froala_editor/actions/workflows/specs.yml/badge.svg)](https://github.com/blocknotes/activeadmin_froala_editor/actions/workflows/specs.yml)
 
 An Active Admin plugin to use [Froala WYSIWYG editor](https://github.com/froala/wysiwyg-editor) (jQuery required, font-awesome required & included). For Froala license / pricing see Froala website.
 
@@ -8,7 +11,7 @@ Features:
 - customizable options via data attributes in the form input;
 - plugins included, like images upload.
 
-![screenshot](screenshot.png)
+![screenshot](extra/screenshot.png)
 
 Please :star: if you like it.
 
@@ -18,6 +21,7 @@ After installing Active Admin, add to your Gemfile: `gem 'activeadmin_froala_edi
 
 If you installed Active Admin **without Webpacker** support:
 
+- Add a SASS/SCSS gem to your Gemfile (ex. `gem 'sassc'`)
 - Add at the end of your Active Admin styles (_app/assets/stylesheets/active_admin.scss_):
 ```css
 @import 'font-awesome/font-awesome';
@@ -93,6 +97,10 @@ Consider that this is just a basic example: images are uploaded as soon as they 
  editor (regardless of the form submit), it shows the editor only for an existing record (because of
 the *upload_admin_post_path*) and it doesn't provide a way to remove images (just deleting them from
 the editor will not destroy them, you'll need to implement a purge logic for that).
+
+## Changelog
+
+The changelog is available [here](CHANGELOG.md).
 
 ## Do you like it? Star it!
 
