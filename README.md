@@ -98,6 +98,10 @@ Consider that this is just a basic example: images are uploaded as soon as they 
 the *upload_admin_post_path*) and it doesn't provide a way to remove images (just deleting them from
 the editor will not destroy them, you'll need to implement a purge logic for that).
 
+## Changelog
+
+The changelog is available [here](CHANGELOG.md).
+
 ## Do you like it? Star it!
 
 If you use this component just star it. A developer is more motivated to improve a project when there is some interest. My other [Active Admin components](https://github.com/blocknotes?utf8=✓&tab=repositories&q=activeadmin&type=source).
