@@ -15,3 +15,9 @@ appraise 'rails70-activeadmin' do
   gem 'rails', '~> 7.0.0'
   gem 'sprockets-rails'
 end
+
+appraise 'rails71-activeadmin' do
+  gem 'activeadmin'
+  gem 'rails', '~> 7.1.0'
+  gem 'sprockets-rails'
+end
