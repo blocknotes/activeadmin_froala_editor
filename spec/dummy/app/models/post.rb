@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 class Post < ApplicationRecord
-  enum state: %i[available unavailable arriving]
-
   belongs_to :author, inverse_of: :posts, autosave: true
 
   has_one :author_profile, through: :author, source: :profile
@@ -26,5 +24,15 @@ class Post < ApplicationRecord
 
   def upper_title
     title.upcase
+  end
+
+  class << self
+    def ransackable_associations(auth_object = nil)
+      %w[author author_profile post_tags tags images_attachments images_blobs]
+    end
+
+    def ransackable_attributes(auth_object = nil)
+      %w[author_id category created_at description dt id position published title summary updated_at]
+    end
   end
 end
