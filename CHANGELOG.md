@@ -2,6 +2,12 @@
 
 An Active Admin plugin to use Froala WYSIWYG editor.
 
+## v1.1.0 - 2024-02-18
+
+- Set minimum Ruby version to 3.0.0
+- Set minimum ActiveAdmin version to 2.9.0
+- Update CI configuration
+
 ## v1.0.0 - 2022-18-04
 
 - Set minimum Ruby version to 2.6.0
