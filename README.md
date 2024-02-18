@@ -18,6 +18,8 @@ Please :star: if you like it.
 
 ## Install
 
+*NOTE*: if you are using Ruby < 3.0, please use Activeadmin Froala Editor 1.0.0
+
 After installing Active Admin, add to your Gemfile: `gem 'activeadmin_froala_editor'` (and execute *bundle*)
 
 If you installed Active Admin **without Webpacker** support:
