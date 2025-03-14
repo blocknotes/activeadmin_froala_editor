@@ -11,6 +11,6 @@
     "index.js"
   ],
   "devDependencies": {
-    "froala-editor": "^4.0.4"
+    "froala-editor": "^4.1.4"
   }
 }
