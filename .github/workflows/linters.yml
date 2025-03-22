@@ -4,8 +4,10 @@ name: Linters
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
+    branches:
+      - main
 
 jobs:
   reviewdog:
