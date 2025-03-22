@@ -369,9 +369,11 @@ DEPENDENCIES
   activeadmin
   activeadmin_froala_editor!
   appraisal (~> 2.4)
+  bigdecimal
   capybara
   cuprite
   fasterer
+  mutex_m
   pry-rails
   puma
   rails (~> 7.1.0)
