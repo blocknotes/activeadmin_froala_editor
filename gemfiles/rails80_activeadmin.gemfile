@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-gem "rails", "~> 7.0.0"
+gem "rails", "~> 8.0.0"
 gem "activeadmin"
 gem "activeadmin_froala_editor", path: "../"
 gem "appraisal", "~> 2.4"

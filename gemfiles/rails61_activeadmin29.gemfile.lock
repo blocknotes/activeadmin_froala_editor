@@ -85,6 +85,7 @@ GEM
       activesupport (>= 3.0.0)
       ruby2_keywords (>= 0.0.2)
     ast (2.4.2)
+    bigdecimal (3.1.9)
     builder (3.2.4)
     capybara (3.40.0)
       addressable
@@ -158,6 +159,7 @@ GEM
     method_source (1.0.0)
     mini_mime (1.1.5)
     minitest (5.22.2)
+    mutex_m (0.3.0)
     net-imap (0.4.10)
       date
       net-protocol
@@ -166,7 +168,6 @@ GEM
     net-protocol (0.2.2)
       timeout
     net-smtp (0.4.0.1)
-      net-protocol
     nio4r (2.7.0)
     nokogiri (1.16.2-arm64-darwin)
       racc (~> 1.4)
@@ -319,9 +320,11 @@ DEPENDENCIES
   activeadmin (~> 2.9.0)
   activeadmin_froala_editor!
   appraisal (~> 2.4)
+  bigdecimal
   capybara
   cuprite
   fasterer
+  mutex_m
   pry-rails
   puma
   rails (~> 6.1.0)
@@ -333,6 +336,7 @@ DEPENDENCIES
   rubocop-rails
   rubocop-rspec
   sassc
+  sprockets-rails
   sqlite3
 
 BUNDLED WITH
