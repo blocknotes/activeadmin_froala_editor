@@ -2,24 +2,21 @@
 name: Specs Rails 7.2
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
-    branches:
-      - main
+    branches: [main]
+  push:
+    branches: [main]
 
 jobs:
-  tests:
+  test:
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
         ruby: ['3.2', '3.4']
-        gemfile: ['rails72_activeadmin']
 
     env:
-      BUNDLE_GEMFILE: ${{ github.workspace }}/gemfiles/${{ matrix.gemfile }}.gemfile
+      RAILS_VERSION: 7.2
 
     steps:
       - name: Checkout repository
@@ -30,6 +27,9 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
+
+      - name: Database setup
+        run: bin/rails db:create db:migrate db:test:prepare
 
       - name: Run tests
         run: bundle exec rspec --profile

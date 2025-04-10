@@ -1,0 +1,19 @@
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: extra/Dockerfile
+      args:
+        BUNDLER_VERSION: ${BUNDLER_VERSION}
+        RUBY_IMAGE: ruby:${RUBY:-3.4}-slim
+        RAILS_VERSION: ${RAILS:-}
+        ACTIVEADMIN_VERSION: ${ACTIVEADMIN:-}
+        UID: ${UID}
+    user: ${UID}:${GID}
+    ports:
+      - ${SERVER_PORT}:${SERVER_PORT}
+    working_dir: /app
+    volumes:
+      - ..:/app
+    stdin_open: true
+    tty: true
