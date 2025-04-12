@@ -1,7 +1,7 @@
 /*!
- * froala_editor v4.0.10 (https://www.froala.com/wysiwyg-editor)
+ * froala_editor v4.5.1 (https://www.froala.com/wysiwyg-editor)
  * License https://froala.com/wysiwyg-editor/terms/
- * Copyright 2014-2022 Froala Labs
+ * Copyright 2014-2025 Froala Labs
  */
 
 (function (global, factory) {
@@ -12,24 +12,31 @@
 
   FE = FE && FE.hasOwnProperty('default') ? FE['default'] : FE;
 
-  function _defineProperty(obj, key, value) {
-    if (key in obj) {
-      Object.defineProperty(obj, key, {
-        value: value,
-        enumerable: true,
-        configurable: true,
-        writable: true
-      });
-    } else {
-      obj[key] = value;
+  function _defineProperty(e, r, t) {
+    return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, {
+      value: t,
+      enumerable: !0,
+      configurable: !0,
+      writable: !0
+    }) : e[r] = t, e;
+  }
+  function _toPrimitive(t, r) {
+    if ("object" != typeof t || !t) return t;
+    var e = t[Symbol.toPrimitive];
+    if (void 0 !== e) {
+      var i = e.call(t, r || "default");
+      if ("object" != typeof i) return i;
+      throw new TypeError("@@toPrimitive must return a primitive value.");
     }
-
-    return obj;
+    return ("string" === r ? String : Number)(t);
+  }
+  function _toPropertyKey(t) {
+    var i = _toPrimitive(t, "string");
+    return "symbol" == typeof i ? i : i + "";
   }
 
-  var _translation;
   FE.LANGUAGE['ko'] = {
-    translation: (_translation = {
+    translation: _defineProperty(_defineProperty(_defineProperty(_defineProperty({
       // Place holder
       'Type something': "\uB0B4\uC6A9\uC744 \uC785\uB825\uD558\uC138\uC694",
       // Missing translations
@@ -298,7 +305,7 @@
       'Word Paste Detected': "\uC6CC\uB4DC \uBD99\uC5EC \uB123\uAE30\uAC00 \uAC80\uCD9C \uB418\uC5C8\uC2B5\uB2C8\uB2E4.",
       // Character Counter
       'Characters': '문자'
-    }, _defineProperty(_translation, "More Text", '더 본문'), _defineProperty(_translation, 'More Paragraph', '더 절'), _defineProperty(_translation, "More Rich", '더 풍부한'), _defineProperty(_translation, "More Misc", '더 기타'), _translation),
+    }, "More Text", '더 본문'), 'More Paragraph', '더 절'), "More Rich", '더 풍부한'), "More Misc", '더 기타'),
     direction: 'ltr'
   };
 
