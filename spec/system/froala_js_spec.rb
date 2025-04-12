@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe 'Froala JS', type: :system do
+RSpec.describe 'Froala JS' do
   it 'has a Javascript function defined and returns the version', :aggregate_failures do
     visit '/admin/posts'
 

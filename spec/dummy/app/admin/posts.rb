@@ -29,7 +29,7 @@ ActiveAdmin.register Post do
       row :images do |resurce|
         resurce.images.each do |image|
           div do
-            link_to image.filename, image, target: '_blank'
+            link_to image.filename, image, target: '_blank', rel: :noopener
           end
         end
         nil
@@ -44,7 +44,7 @@ ActiveAdmin.register Post do
       f.input :author
       f.input :title
       f.input :summary, as: :froala_editor, input_html: { data: { options: { toolbarButtons: buttons } } }
-      f.input :description, as: :froala_editor, input_html: { data: { options: { toolbarButtons: buttons } } }
+      f.input :description, as: :froala_editor # using default options
       f.input :category
       f.input :dt
       f.input :position
