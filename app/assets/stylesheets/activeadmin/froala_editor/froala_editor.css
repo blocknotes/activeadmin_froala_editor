@@ -1,7 +1,7 @@
 /*!
- * froala_editor v4.0.10 (https://www.froala.com/wysiwyg-editor)
+ * froala_editor v4.5.1 (https://www.froala.com/wysiwyg-editor)
  * License https://froala.com/wysiwyg-editor/terms/
- * Copyright 2014-2022 Froala Labs
+ * Copyright 2014-2025 Froala Labs
  */
 
 .fr-clearfix::after {
@@ -472,6 +472,9 @@ iframe.fr-iframe {
 .fr-toolbar.fr-mobile .fr-command.fr-blink, .fr-popup.fr-mobile .fr-command.fr-blink {
   background: #d6d6d6; }
 
+.fr-popup.fr-mobile .fr-command:focus-visible {
+  outline: none; }
+
 .fr-command.fr-btn.fr-options {
   width: 16px;
   margin-left: -5px; }
@@ -733,11 +736,15 @@ ol.decimal_type {
   counter-reset: item; }
 
 ol.decimal_type > li {
-  display: block; }
+  display: block;
+  position: relative; }
 
 ol.decimal_type > li:before {
   content: counters(item,".") ". ";
-  counter-increment: item; }
+  counter-increment: item;
+  position: absolute;
+  margin-right: 100%;
+  right: 10px; }
 
 .fr-popup {
   position: absolute;
@@ -1163,6 +1170,8 @@ ol.decimal_type > li:before {
     background-clip: padding-box; }
     .fr-toolbar .fr-command.fr-btn.fr-open:not(:hover):not(:focus):not(:active) {
       background: #f5f5f5; }
+  .fr-toolbar .fr-popup .fr-command:focus-visible {
+    outline: none; }
   .fr-toolbar.fr-rtl {
     text-align: right; }
   .fr-toolbar.fr-inline {
@@ -1255,7 +1264,6 @@ ol.decimal_type > li:before {
   float: none; }
 
 .fr-toolbar.fr-inline .fr-separator.fr-vs {
-  float: none;
   display: inline-block; }
 
 .fr-second-toolbar {
@@ -1350,10 +1358,13 @@ ol.decimal_type > li:before {
   position: fixed;
   z-index: 10; }
   .fr-sticky-on.fr-sticky-ios {
-    position: absolute;
+    position: -webkit-sticky;
     left: 0;
     right: 0;
     width: auto !important; }
+
+.modal .fr-sticky-on {
+  position: sticky; }
 
 .fr-sticky-dummy {
   display: none; }

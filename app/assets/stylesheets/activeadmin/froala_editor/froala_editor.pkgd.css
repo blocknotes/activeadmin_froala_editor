@@ -1,7 +1,7 @@
 /*!
- * froala_editor v4.0.10 (https://www.froala.com/wysiwyg-editor)
+ * froala_editor v4.5.1 (https://www.froala.com/wysiwyg-editor)
  * License https://froala.com/wysiwyg-editor/terms/
- * Copyright 2014-2022 Froala Labs
+ * Copyright 2014-2025 Froala Labs
  */
 
 .fr-clearfix::after {
@@ -472,6 +472,9 @@ iframe.fr-iframe {
 .fr-toolbar.fr-mobile .fr-command.fr-blink, .fr-popup.fr-mobile .fr-command.fr-blink {
   background: #d6d6d6; }
 
+.fr-popup.fr-mobile .fr-command:focus-visible {
+  outline: none; }
+
 .fr-command.fr-btn.fr-options {
   width: 16px;
   margin-left: -5px; }
@@ -733,11 +736,15 @@ ol.decimal_type {
   counter-reset: item; }
 
 ol.decimal_type > li {
-  display: block; }
+  display: block;
+  position: relative; }
 
 ol.decimal_type > li:before {
   content: counters(item,".") ". ";
-  counter-increment: item; }
+  counter-increment: item;
+  position: absolute;
+  margin-right: 100%;
+  right: 10px; }
 
 .fr-popup {
   position: absolute;
@@ -1163,6 +1170,8 @@ ol.decimal_type > li:before {
     background-clip: padding-box; }
     .fr-toolbar .fr-command.fr-btn.fr-open:not(:hover):not(:focus):not(:active) {
       background: #f5f5f5; }
+  .fr-toolbar .fr-popup .fr-command:focus-visible {
+    outline: none; }
   .fr-toolbar.fr-rtl {
     text-align: right; }
   .fr-toolbar.fr-inline {
@@ -1255,7 +1264,6 @@ ol.decimal_type > li:before {
   float: none; }
 
 .fr-toolbar.fr-inline .fr-separator.fr-vs {
-  float: none;
   display: inline-block; }
 
 .fr-second-toolbar {
@@ -1350,10 +1358,13 @@ ol.decimal_type > li:before {
   position: fixed;
   z-index: 10; }
   .fr-sticky-on.fr-sticky-ios {
-    position: absolute;
+    position: -webkit-sticky;
     left: 0;
     right: 0;
     width: auto !important; }
+
+.modal .fr-sticky-on {
+  position: sticky; }
 
 .fr-sticky-dummy {
   display: none; }
@@ -2207,7 +2218,7 @@ textarea.fr-code {
   .fr-files-upload-layer {
     padding-top: 20px;
     padding-bottom: 20px; } }
-.half-circle {
+.fr-half-circle {
   width: 60px;
   height: 25px;
   background-color: white;
@@ -2223,15 +2234,15 @@ textarea.fr-code {
   margin-left: -25px; }
 
 /* headlines with lines */
-.decorated {
+.fr-decorated {
   overflow: hidden;
   text-align: center; }
 
-.decorated > span {
+.fr-decorated > span {
   position: relative;
   display: inline-block; }
 
-.decorated > span:before, .decorated > span:after {
+.fr-decorated > span:before, .fr-decorated > span:after {
   content: '';
   position: absolute;
   top: 50%;
@@ -2240,17 +2251,17 @@ textarea.fr-code {
   /* half of limiter*/
   margin: 0 20px; }
 
-.decorated > span:before {
+.fr-decorated > span:before {
   right: 100%; }
 
-.decorated > span:after {
+.fr-decorated > span:after {
   left: 100%; }
 
 .fr-align-right {
   float: right; }
 
 /* The checkbox-container */
-.checkbox-container {
+.fr-checkbox-container {
   display: inline-block;
   position: relative;
   padding-left: 20px;
@@ -2291,7 +2302,7 @@ button[data-cmd="insertAll"] {
     top: 3.2px !important; }
 
 /* Hide the browser's default checkbox */
-.checkbox-container input {
+.fr-checkbox-container input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
@@ -2299,7 +2310,7 @@ button[data-cmd="insertAll"] {
   width: 0; }
 
 /* Create a custom checkbox */
-.checkmark {
+.fr-checkmark {
   position: absolute;
   top: 0;
   left: 0;
@@ -2486,10 +2497,10 @@ button[data-cmd="insertAll"] {
   right: 10%;
   z-index: 2147483642; }
 
-.file-item-thumbnail-hover {
+.fr-file-item-thumbnail-hover {
   transition: transform .2s; }
 
-.file-item-thumbnail-hover:hover {
+.fr-file-item-thumbnail-hover:hover {
   -ms-transform: scale(1.3);
   -webkit-transform: scale(1.3);
   transform: scale(1.3); }
@@ -2703,25 +2714,25 @@ button[data-cmd="insertAll"] {
   cursor: default !important; }
 
 /* On mouse-over, add a grey background color */
-.checkbox-container:hover input ~ .checkmark {
+.fr-checkbox-container:hover input ~ .fr-checkmark {
   background-color: #ccc; }
 
 /* When the checkbox is checked, add a blue background */
-.checkbox-container input:checked ~ .checkmark {
+.fr-checkbox-container input:checked ~ .fr-checkmark {
   background-color: #2196F3; }
 
 /* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
+.fr-checkmark:after {
   content: "";
   position: absolute;
   display: none; }
 
 /* Show the checkmark when checked */
-.checkbox-container input:checked ~ .checkmark:after {
+.fr-checkbox-container input:checked ~ .fr-checkmark:after {
   display: block; }
 
 /* Style the checkmark/indicator */
-.checkbox-container .checkmark:after {
+.fr-container .fr-checkmark:after {
   left: 5px;
   top: 2px;
   width: 3px;
@@ -2732,11 +2743,11 @@ button[data-cmd="insertAll"] {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg); }
 
-.file-item-details .file-name {
+.fr-file-item-details .file-name {
   font-weight: bold;
   display: inline; }
 
-.file-item-details .file-description {
+.fr-file-item-details .file-description {
   font-weight: 300;
   font-size: 11px;
   display: inline; }
@@ -3078,8 +3089,44 @@ button[data-cmd="insertAll"] {
 .fr-hovered-over-file {
   background-color: #F0F0F0; }
 
-.thumbnail-padding {
+.fr-thumbnail-padding {
   padding-right: 4px; }
+
+.fr-popup .fr-command.fr-btn[data-cmd="filestackIcon"] svg path,
+.fr-popup .fr-command.fr-btn[data-cmd="openFilePickerVideo"] svg path,
+.fr-popup .fr-command.fr-btn[data-cmd="openFilePickerImage"] svg path,
+.fr-toolbar .fr-command.fr-btn[data-cmd="openFilePicker"] svg path,
+.fr-toolbar .fr-command.fr-btn[data-cmd="openFilePickerImage"] svg path,
+.fr-popup .fr-tabs .fr-command.fr-btn[data-cmd="openFilePicker"] svg path,
+.fr-popup .fr-tabs .fr-command.fr-btn[data-cmd="openFilePickerImage"] svg path,
+.fr-popup .fr-tabs .fr-command.fr-btn[data-cmd="openFilePickerVideo"] svg path,
+.fr-command.fr-btn[data-cmd="openFilePickerReplaceImageOnly"] svg path,
+.fr-command.fr-btn[data-cmd="openFilePickerReplaceVideoOnly"] svg path,
+.fr-toolbar .fr-command.fr-btn[data-cmd="openFilePickerVideo"] svg path,
+.fr-toolbar .fr-command.fr-btn[data-cmd="openFilePickerImageOnly"] svg path:last-child,
+.fr-toolbar .fr-command.fr-btn[data-cmd="openFilePickerVideoOnly"] svg path:last-child,
+.fr-popup .fr-command.fr-btn[data-cmd="openFilePickerImage"] svg path,
+.fr-popup .fr-command.fr-btn[data-cmd="openFilePickerVideo"] svg path,
+.fr-popup .fr-command.fr-btn[data-cmd="filestackIcon"] svg path,
+.fr-popup .fr-command.fr-btn[data-cmd="openFilePickerFile"] svg path {
+  fill: #ef4a25; }
+
+.fr-command.fr-filestack-active.fr-btn.fr-filestack-active svg path {
+  fill: #0098F7; }
+
+.fsp-picker-appear-active {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9; }
+
+body.fr-fullscreen .fs-transforms-container {
+  position: absolute;
+  z-index: 2247483660; }
+
+.fsp-notifications__container {
+  position: fixed !important; }
 
 .fr-clearfix::after {
   clear: both;
@@ -3923,14 +3970,17 @@ div.fr-modal-body {
   border: 0; }
 
 .fr-element table td.fr-selected-cell, .fr-element table th.fr-selected-cell {
-  border: 1px double #0098f7; }
-.fr-element table tr {
-  user-select: none;
-  -o-user-select: none;
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none; }
+  border: 1px double #0098f7;
+  position: relative; }
+.fr-element table td.fr-selected-cell:after, .fr-element table th.fr-selected-cell:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 100, 255, 0.15);
+  pointer-events: none; }
 .fr-element table td, .fr-element table th {
   user-select: text;
   -o-user-select: text;
@@ -3967,6 +4017,46 @@ div.fr-modal-body {
   -khtml-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none; }
+
+.fr-table-selector {
+  display: block;
+  position: absolute;
+  z-index: 9999;
+  width: 16px;
+  height: 16px;
+  padding: 3px;
+  border: transparent 2px solid;
+  border-radius: 4px 4px 0 0; }
+  .fr-table-selector a {
+    width: 16px;
+    height: 16px;
+    display: block; }
+    .fr-table-selector a > svg {
+      width: 16px;
+      height: 16px; }
+
+.fr-table-selector-active {
+  opacity: 1;
+  visibility: visible;
+  border: #fdcf00 2px solid; }
+  .fr-table-selector-active a > svg {
+    color: #fdcf00; }
+
+.fr-table-selector-active-selected {
+  border: #0d65ff 2px solid; }
+  .fr-table-selector-active-selected a > svg {
+    color: #0d65ff; }
+
+.fr-table-selector-inactive {
+  opacity: 0;
+  visibility: hidden; }
+
+.fr-view .fr-table-selection-hover {
+  outline: #fdcf00 2px solid; }
+
+.fr-view .fr-table-selected {
+  outline: #0d65ff 2px solid;
+  caret-color: transparent; }
 
 .fr-popup .fr-table-size {
   margin: 20px; }
@@ -4492,6 +4582,9 @@ div.fr-modal-body {
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
+.fr-view li img.fr-dii.fr-fil {
+  margin-right: 20px; }
+
 .fr-view {
   word-wrap: break-word; }
   .fr-view span[style~="color:"] a {
@@ -4521,6 +4614,10 @@ div.fr-modal-body {
         border-width: 2px; }
     .fr-view table th {
       background: #ececec; }
+    .fr-view table tfoot td {
+      background: #ececec; }
+  .fr-view .fr-mso-hidden {
+    display: none; }
   .fr-view hr {
     clear: both;
     user-select: none;
@@ -4623,15 +4720,18 @@ div.fr-modal-body {
       vertical-align: bottom;
       margin-left: 5px;
       margin-right: 5px;
-      max-width: calc(100% - (2 * 5px)); }
+      max-width: calc(100% - (2 * 5px));
+      min-width: 10px; }
       .fr-view img.fr-dii.fr-fil {
         float: left;
         margin: 5px 5px 5px 0;
-        max-width: calc(100% - 5px); }
+        max-width: calc(100% - 5px);
+        min-width: 5px; }
       .fr-view img.fr-dii.fr-fir {
         float: right;
         margin: 5px 0 5px 5px;
-        max-width: calc(100% - 5px); }
+        max-width: calc(100% - 5px);
+        min-width: 5px; }
   .fr-view span.fr-img-caption {
     position: relative;
     max-width: 100%; }
@@ -4652,15 +4752,18 @@ div.fr-modal-body {
       vertical-align: bottom;
       margin-left: 5px;
       margin-right: 5px;
-      max-width: calc(100% - (2 * 5px)); }
+      max-width: calc(100% - (2 * 5px));
+      min-width: 10px; }
       .fr-view span.fr-img-caption.fr-dii.fr-fil {
         float: left;
         margin: 5px 5px 5px 0;
-        max-width: calc(100% - 5px); }
+        max-width: calc(100% - 5px);
+        min-width: 5px; }
       .fr-view span.fr-img-caption.fr-dii.fr-fir {
         float: right;
         margin: 5px 0 5px 5px;
-        max-width: calc(100% - 5px); }
+        max-width: calc(100% - 5px);
+        min-width: 5px; }
   .fr-view .fr-video {
     text-align: center;
     position: relative; }
@@ -4736,6 +4839,10 @@ div.fr-modal-body {
   .fr-view button.fr-large, .fr-view input.fr-large, .fr-view textarea.fr-large {
     font-size: 24px; }
 
+.fr-view span.fr-img-caption.fr-dii.fr-fil,
+.fr-view p img.fr-dii.fr-fil {
+  margin-right: 15px; }
+
 /**
  * Image style.
  */
@@ -4767,15 +4874,18 @@ img.fr-view {
     vertical-align: bottom;
     margin-left: 5px;
     margin-right: 5px;
-    max-width: calc(100% - (2 * 5px)); }
+    max-width: calc(100% - (2 * 5px));
+    min-width: 10px; }
     img.fr-view.fr-dii.fr-fil {
       float: left;
       margin: 5px 5px 5px 0;
-      max-width: calc(100% - 5px); }
+      max-width: calc(100% - 5px);
+      min-width: 5px; }
     img.fr-view.fr-dii.fr-fir {
       float: right;
       margin: 5px 0 5px 5px;
-      max-width: calc(100% - 5px); }
+      max-width: calc(100% - 5px);
+      min-width: 5px; }
 
 span.fr-img-caption.fr-view {
   position: relative;
@@ -4797,12 +4907,15 @@ span.fr-img-caption.fr-view {
     vertical-align: bottom;
     margin-left: 5px;
     margin-right: 5px;
-    max-width: calc(100% - (2 * 5px)); }
+    max-width: calc(100% - (2 * 5px));
+    min-width: 10px; }
     span.fr-img-caption.fr-view.fr-dii.fr-fil {
       float: left;
       margin: 5px 5px 5px 0;
-      max-width: calc(100% - 5px); }
+      max-width: calc(100% - 5px);
+      min-width: 5px; }
     span.fr-img-caption.fr-view.fr-dii.fr-fir {
       float: right;
       margin: 5px 0 5px 5px;
-      max-width: calc(100% - 5px); }
+      max-width: calc(100% - 5px);
+      min-width: 5px; }
