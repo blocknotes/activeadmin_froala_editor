@@ -29,3 +29,28 @@ bundle update
 bin/rails s
 # To try different versions of Rails/ActiveAdmin edit extra/dev_setup.sh
 ```
+
+### Update the editor
+
+- Download the editor packages: https://github.com/froala/wysiwyg-editor/releases/latest
+- Unpack it somewhere: `tar xvfz *.tar.gz`
+- Enter in the extracted folder: `cd wysiwyg-editor*`
+- Copy the JS files: `cp -r css js /tmp/`
+- Enter in the gem root path
+- Copy the new editor assets:
+
+```sh
+# From activeadmin_froala_editor root folder, move or delete the current JS files:
+mv app/assets/javascripts/activeadmin/froala_editor /tmp/old_js
+# Move the previously copied JS files:
+mv /tmp/js app/assets/javascripts/activeadmin/froala_editor
+# Move or delete the current CSS files:
+mv app/assets/stylesheets/activeadmin/froala_editor /tmp/old_css
+# Move the previously copied CSS files:
+mv /tmp/css app/assets/stylesheets/activeadmin/froala_editor
+```
+
+- Check the changes, most of them should be for updated files plus some new / removed file
+- Update _package.json_ with the new Froala version
+- Update the lock file: `npx yarn`
+- Update the _version.rb_ with the new Froala version
