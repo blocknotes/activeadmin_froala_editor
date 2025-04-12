@@ -29,6 +29,8 @@ rails72 = rails_ver.empty? || Gem::Version.new(rails_ver) >= Gem::Version.new('7
 sqlite3 = ruby32 && rails72 ? ['sqlite3'] : ['sqlite3', '~> 1.4']
 gem(*sqlite3)
 
+gem 'zeitwerk', '~> 2.6.18' unless ruby32
+
 # NOTE: to avoid error: uninitialized constant ActiveSupport::LoggerThreadSafeLevel::Logger
 gem 'concurrent-ruby', '1.3.4'
 
