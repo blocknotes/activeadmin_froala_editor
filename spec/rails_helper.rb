@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'spec_helper'
+require_relative 'spec_helper'
 
 ENV['RAILS_ENV'] = 'test'
 
@@ -11,7 +11,12 @@ abort('The Rails environment is running in production mode!') if Rails.env.produ
 require 'rspec/rails'
 require 'capybara/rails'
 
-Dir[File.expand_path('support/**/*.rb', __dir__)].each { |f| require f }
+Dir[File.expand_path('support/**/*.rb', __dir__)].each { |f| require_relative f }
+
+Dir[File.expand_path('page_objects/base_object.rb', __dir__)].each { |f| require_relative f }
+Dir[File.expand_path('page_objects/base_page.rb', __dir__)].each { |f| require_relative f }
+Dir[File.expand_path('page_objects/shared/html_editor.rb', __dir__)].each { |f| require_relative f }
+Dir[File.expand_path('page_objects/**/*.rb', __dir__)].each { |f| require_relative f }
 
 # Checks for pending migrations and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove these lines.
