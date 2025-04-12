@@ -2,6 +2,11 @@
 
 require_relative 'spec_helper'
 
+require 'zeitwerk'
+loader = Zeitwerk::Loader.new
+loader.push_dir("#{__dir__}/page_objects")
+loader.setup
+
 ENV['RAILS_ENV'] = 'test'
 
 require File.expand_path('dummy/config/environment.rb', __dir__)
@@ -12,11 +17,6 @@ require 'rspec/rails'
 require 'capybara/rails'
 
 Dir[File.expand_path('support/**/*.rb', __dir__)].each { |f| require_relative f }
-
-Dir[File.expand_path('page_objects/base_object.rb', __dir__)].each { |f| require_relative f }
-Dir[File.expand_path('page_objects/base_page.rb', __dir__)].each { |f| require_relative f }
-Dir[File.expand_path('page_objects/shared/html_editor.rb', __dir__)].each { |f| require_relative f }
-Dir[File.expand_path('page_objects/**/*.rb', __dir__)].each { |f| require_relative f }
 
 # Checks for pending migrations and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove these lines.

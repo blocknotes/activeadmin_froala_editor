@@ -12,6 +12,6 @@ class BasePage
   def load = visit(path)
 
   def lookup_editor(editor_container:)
-    @editor = FroalaEditor.new(editor_container)
+    @editor = Shared::FroalaEditor.new(editor_container)
   end
 end
