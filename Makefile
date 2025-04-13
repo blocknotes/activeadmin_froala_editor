@@ -30,13 +30,16 @@ down:
 
 # App commands
 
-console:
+seed:
+	@docker compose -f extra/docker-compose.yml exec app bin/rails db:seed
+
+console: seed
 	@docker compose -f extra/docker-compose.yml exec app bin/rails console
 
 lint:
 	@docker compose -f extra/docker-compose.yml exec app bin/rubocop
 
-server:
+server: seed
 	@docker compose -f extra/docker-compose.yml exec app bin/rails server -b 0.0.0.0 -p ${SERVER_PORT}
 
 specs:

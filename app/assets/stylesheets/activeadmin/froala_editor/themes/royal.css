@@ -1,7 +1,7 @@
 /*!
- * froala_editor v4.0.10 (https://www.froala.com/wysiwyg-editor)
+ * froala_editor v4.5.1 (https://www.froala.com/wysiwyg-editor)
  * License https://froala.com/wysiwyg-editor/terms/
- * Copyright 2014-2022 Froala Labs
+ * Copyright 2014-2025 Froala Labs
  */
 
 .fr-clearfix::after {
@@ -475,13 +475,13 @@
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; }
 .royal-theme .fr-icons {
   padding: 10px 20px 0; }
-.royal-theme .half-circle {
+.royal-theme .fr-half-circle {
   border-bottom: 0; }
-.royal-theme .checkbox-container input {
+.royal-theme .fr-checkbox-container input {
   opacity: 0;
   height: 0;
   width: 0; }
-.royal-theme .checkmark {
+.royal-theme .fr-checkmark {
   top: 0;
   left: 0; }
 .royal-theme .fr-cloud-icon {
@@ -582,9 +582,9 @@
   font-weight: 200; }
 .royal-theme .fr-autoplay-checkbox-label {
   margin: 0; }
-.royal-theme .checkbox-container .checkmark:after {
+.royal-theme .fr-container .fr-checkmark:after {
   border-width: 0 3px 3px 0; }
-.royal-theme .file-item-details .file-description {
+.royal-theme .fr-file-item-details .file-description {
   font-weight: 300; }
 .royal-theme #myprogressBar {
   background-color: #4CAF50; }
@@ -592,6 +592,8 @@
   padding: 0; }
 .royal-theme .fr-hovered-over-file {
   background-color: #F0F0F0; }
+.royal-theme body.fr-fullscreen .fs-transforms-container {
+  z-index: 2247483660; }
 .royal-theme.fr-box.fr-fullscreen {
   top: 0;
   left: 0;
@@ -976,13 +978,9 @@
     width: 368px; } }
 .royal-theme .fr-element table td.fr-selected-cell, .royal-theme .fr-element table th.fr-selected-cell {
   border: 1px double #0098f7; }
-.royal-theme .fr-element table tr {
-  user-select: none;
-  -o-user-select: none;
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none; }
+.royal-theme .fr-element table td.fr-selected-cell:after, .royal-theme .fr-element table th.fr-selected-cell:after {
+  top: 0;
+  left: 0; }
 .royal-theme .fr-element table td, .royal-theme .fr-element table th {
   user-select: text;
   -o-user-select: text;
@@ -1010,6 +1008,32 @@
   -khtml-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none; }
+.royal-theme .fr-table-selector {
+  width: 16px;
+  height: 16px;
+  padding: 3px;
+  border: transparent 2px solid;
+  border-radius: 4px 4px 0 0; }
+  .royal-theme .fr-table-selector a {
+    width: 16px;
+    height: 16px; }
+    .royal-theme .fr-table-selector a > svg {
+      width: 16px;
+      height: 16px; }
+.royal-theme .fr-table-selector-active {
+  border: #fdcf00 2px solid; }
+  .royal-theme .fr-table-selector-active a > svg {
+    color: #fdcf00; }
+.royal-theme .fr-table-selector-active-selected {
+  border: #0d65ff 2px solid; }
+  .royal-theme .fr-table-selector-active-selected a > svg {
+    color: #0d65ff; }
+.royal-theme .fr-table-selector-inactive {
+  opacity: 0; }
+.royal-theme .fr-view .fr-table-selection-hover {
+  outline: #fdcf00 2px solid; }
+.royal-theme .fr-view .fr-table-selected {
+  outline: #0d65ff 2px solid; }
 .royal-theme.fr-popup .fr-table-size {
   margin: 20px; }
   .royal-theme.fr-popup .fr-table-size .fr-select-table-size {
@@ -1184,6 +1208,8 @@
   border: 1px solid #DDD; }
 .royal-theme .fr-view table th {
   background: #ececec; }
+.royal-theme .fr-view table tfoot td {
+  background: #ececec; }
 .royal-theme .fr-view hr {
   user-select: none;
   -o-user-select: none;
@@ -1234,13 +1260,16 @@
 .royal-theme .fr-view img.fr-dii {
   margin-left: 5px;
   margin-right: 5px;
-  max-width: calc(100% - (2 * 5px)); }
+  max-width: calc(100% - (2 * 5px));
+  min-width: 10px; }
   .royal-theme .fr-view img.fr-dii.fr-fil {
     margin: 5px 5px 5px 0;
-    max-width: calc(100% - 5px); }
+    max-width: calc(100% - 5px);
+    min-width: 5px; }
   .royal-theme .fr-view img.fr-dii.fr-fir {
     margin: 5px 0 5px 5px;
-    max-width: calc(100% - 5px); }
+    max-width: calc(100% - 5px);
+    min-width: 5px; }
 .royal-theme .fr-view span.fr-img-caption.fr-dib {
   margin: 5px auto; }
   .royal-theme .fr-view span.fr-img-caption.fr-dib.fr-fil {
@@ -1250,13 +1279,16 @@
 .royal-theme .fr-view span.fr-img-caption.fr-dii {
   margin-left: 5px;
   margin-right: 5px;
-  max-width: calc(100% - (2 * 5px)); }
+  max-width: calc(100% - (2 * 5px));
+  min-width: 10px; }
   .royal-theme .fr-view span.fr-img-caption.fr-dii.fr-fil {
     margin: 5px 5px 5px 0;
-    max-width: calc(100% - 5px); }
+    max-width: calc(100% - 5px);
+    min-width: 5px; }
   .royal-theme .fr-view span.fr-img-caption.fr-dii.fr-fir {
     margin: 5px 0 5px 5px;
-    max-width: calc(100% - 5px); }
+    max-width: calc(100% - 5px);
+    min-width: 5px; }
 .royal-theme .fr-view .fr-video.fr-rv {
   height: 0; }
   .royal-theme .fr-view .fr-video.fr-rv > iframe, .royal-theme .fr-view .fr-video.fr-rv object, .royal-theme .fr-view .fr-video.fr-rv embed {
@@ -1300,13 +1332,16 @@
 .royal-theme img.fr-view.fr-dii {
   margin-left: 5px;
   margin-right: 5px;
-  max-width: calc(100% - (2 * 5px)); }
+  max-width: calc(100% - (2 * 5px));
+  min-width: 10px; }
   .royal-theme img.fr-view.fr-dii.fr-fil {
     margin: 5px 5px 5px 0;
-    max-width: calc(100% - 5px); }
+    max-width: calc(100% - 5px);
+    min-width: 5px; }
   .royal-theme img.fr-view.fr-dii.fr-fir {
     margin: 5px 0 5px 5px;
-    max-width: calc(100% - 5px); }
+    max-width: calc(100% - 5px);
+    min-width: 5px; }
 .royal-theme span.fr-img-caption.fr-view.fr-dib {
   margin: 5px auto; }
   .royal-theme span.fr-img-caption.fr-view.fr-dib.fr-fil {
@@ -1316,13 +1351,16 @@
 .royal-theme span.fr-img-caption.fr-view.fr-dii {
   margin-left: 5px;
   margin-right: 5px;
-  max-width: calc(100% - (2 * 5px)); }
+  max-width: calc(100% - (2 * 5px));
+  min-width: 10px; }
   .royal-theme span.fr-img-caption.fr-view.fr-dii.fr-fil {
     margin: 5px 5px 5px 0;
-    max-width: calc(100% - 5px); }
+    max-width: calc(100% - 5px);
+    min-width: 5px; }
   .royal-theme span.fr-img-caption.fr-view.fr-dii.fr-fir {
     margin: 5px 0 5px 5px;
-    max-width: calc(100% - 5px); }
+    max-width: calc(100% - 5px);
+    min-width: 5px; }
 .royal-theme .fr-element .fr-embedly {
   user-select: none;
   -o-user-select: none;
