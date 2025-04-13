@@ -1,6 +1,6 @@
 {
   "name": "activeadmin_froala_editor",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "An Active Admin plugin to use Froala WYSIWYG editor",
   "repository": "https://github.com/blocknotes/activeadmin_froala_editor",
   "author": "Mattia Roccoberton <mat@blocknot.es>",
