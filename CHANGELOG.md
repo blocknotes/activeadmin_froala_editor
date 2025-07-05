@@ -2,6 +2,10 @@
 
 An Active Admin plugin to use Froala WYSIWYG editor.
 
+## v1.2.1 - 2025-07-05
+
+- Update Froala to version 4.5.2
+
 ## v1.2.0 - 2025-04-13
 
 - Update Froala to version 4.5.1
