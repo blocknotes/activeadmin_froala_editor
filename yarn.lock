@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-froala-editor@^4.5.1:
-  version "4.5.1"
-  resolved "https://registry.yarnpkg.com/froala-editor/-/froala-editor-4.5.1.tgz#4a5c9bd6bb72dfb19f80749ae68c810a4e16d1d8"
-  integrity sha512-hgx4JJAM80yM3PGdyj7+41OQHP+Yj59yMvknwQkizlkbo/aKn2lbEtiqPMm//thNEE6NCuGLpHCZqppR/7Vymg==
+froala-editor@^4.5.2:
+  version "4.5.2"
+  resolved "https://registry.yarnpkg.com/froala-editor/-/froala-editor-4.5.2.tgz#caae73eea45e26ca420e1bb0e69c1eb85f2ffe27"
+  integrity sha512-Nkfll8jkZEtxTDO6bbmOVXHZIrH5yIO7jIDEkMc68uQjRZJwYZM+MuOhUZspDY2U1PR+kEI+o3NOymD5isizjQ==
